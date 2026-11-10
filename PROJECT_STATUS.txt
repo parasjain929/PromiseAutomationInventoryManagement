@@ -1,0 +1,15 @@
+Promise Automation Inventory Manager — revision notes
+
+Implemented in this revision:
+- First-run administrator account setup and sign-in screen.
+- Passwords stored as salted PBKDF2-HMAC-SHA256 hashes, not plaintext.
+- Password change and logout controls.
+- Removed machine registry and machine/delivery page from the UI.
+- Removed machine association fields and tables from the active database schema; existing databases are migrated while preserving project, allocation, movement, and installation history. Legacy machine links are discarded.
+- Component consumption is recorded against a project only.
+- Added tests for project-only tracking and account authentication.
+
+Validation in this environment:
+- Python syntax compilation passed.
+- Workflow and authentication tests passed.
+- UI launch and visual acceptance could not be confirmed because PySide6 is not installed in this environment. Please install requirements and run on macOS/Windows before operational use.
